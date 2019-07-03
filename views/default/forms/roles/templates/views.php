@@ -6,21 +6,22 @@ $pname = elgg_extract('name', $vars, false);
 $details = elgg_extract('details', $vars);
 $prule = elgg_extract('rule', $details);
 
-$name = elgg_view('input/text', array(
+$name = elgg_view_field([
+    '#type' => 'text',
 	'name' => 'views[name][]',
 	'class' => 'roles-ui-autocomplete-views',
 	'value' => $pname
-		));
+]);
 
 $rules = array('allow', 'deny', 'extend', 'replace');
 
-$rule = elgg_view('input/dropdown', array(
+$rule = elgg_view_field([
+    '#type' => 'dropdown',
 	'name' => 'views[rule][]',
 	'options' => $rules,
 	'class' => 'roles-ui-form-rule-select',
 	'value' => $prule,
-	
-		));
+]);
 
 
 // EXTEND VIEW

@@ -40,10 +40,11 @@ echo '</div>';
 
 echo '<div class="elgg-foot">';
 
-echo elgg_view('input/hidden', array(
+echo elgg_view_field([
+	'#type' => 'hidden',
 	'name' => 'guid',
 	'value' => $role->guid
-));
+]);
 
 echo '<div class="roles-ui-buttonbank clearfix">';
 foreach ($permission_types as $ptype) {
@@ -53,10 +54,11 @@ foreach ($permission_types as $ptype) {
 		'rel' => $ptype
 	));
 }
-echo elgg_view('input/submit', array(
+echo elgg_view_field([
+	'#type' => 'submit',
 	'value' => elgg_echo('save'),
 	'class' => 'elgg-button elgg-button-submit float-alt'
-));
+]);
 echo '</div>';
 
 echo '</div>';

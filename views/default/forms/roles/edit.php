@@ -5,27 +5,25 @@ namespace Elgg\Roles\UI;
 $role = elgg_extract('entity', $vars);
 $roles = roles_get_all_roles();
 
-echo '<div>';
-echo '<label>' . elgg_echo('roles_ui:name') . '</label>';
-echo '<span class="elgg-text-help">' . elgg_echo('roles_ui:name:help') . '</span>';
-echo elgg_view('input/text', array(
+echo elgg_view_field([
+    '#type' => 'text',
 	'name' => 'name',
 	'value' => $role ? $role->name : '',
 	'disabled' => $role && $role->name,
-));
-echo '</div>';
+	'#label' => elgg_echo('roles_ui:name'),
+	'#help' => elgg_echo('roles_ui:name:help'),
+]);
 
-echo '<div>';
-echo '<label>' . elgg_echo('roles_ui:title') . '</label>';
-echo '<span class="elgg-text-help">' . elgg_echo('roles_ui:title:help') . '</span>';
-echo elgg_view('input/text', array(
+echo elgg_view_field([
+    '#type' => 'text',
 	'name' => 'title',
 	'value' => ($role) ? $role->getDisplayName() : '',
-));
-echo '</div>';
+	'#label' => elgg_echo('roles_ui:title'),
+	'#help' => elgg_echo('roles_ui:title:help'),
+]);
 
 echo '<div>';
-echo '<label>' . elgg_echo('roles_ui:extends') . '</label>';
+echo '<label>' . elgg_echo('roles_ui:extends') . ': </label>';
 echo '<span class="elgg-text-help">' . elgg_echo('roles_ui:extends:help') . '</span>';
 
 echo '<table class="elgg-table-alt">';
@@ -54,10 +52,11 @@ foreach ($roles as $r) {
 	$order = array_search($r->name, $extends);
 
 	echo '<td>';
-	echo elgg_view('input/text', array(
+	echo elgg_view_field([
+    '#type' => 'text',
 		'name' => "extends[$r->guid]",
 		'value' => ($order !== false) ? $order : ''
-	));
+	]);
 	echo '</td>';
 
 	echo '</tr>';
@@ -69,14 +68,16 @@ echo '</div>';
 
 echo '<div class="elgg-foot">';
 
-echo elgg_view('input/hidden', array(
+echo elgg_view_field([
+	'#type' => 'hidden',
 	'name' => 'guid',
 	'value' => $role ? $role->guid : '',
-));
+]);
 
-echo elgg_view('input/submit', array(
+echo elgg_view_field([
+	'#type' => 'submit',
 	'value' => elgg_echo('save')
-));
+]);
 echo '</div>';
 
 

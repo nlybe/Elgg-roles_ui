@@ -6,21 +6,22 @@ $pname = elgg_extract('name', $vars, false);
 $details = elgg_extract('details', $vars);
 $prule = elgg_extract('rule', $details);
 
-$name = elgg_view('input/text', array(
+$name = elgg_view_field([
+    '#type' => 'text',
 	'name' => 'pages[name][]',
 	'class' => 'roles-ui-autocomplete-pages',
 	'value' => $pname
-		));
+]);
 
 $rules = array('allow', 'deny', 'redirect');
 
-$rule = elgg_view('input/dropdown', array(
+$rule = elgg_view_field([
+    '#type' => 'dropdown',
 	'name' => 'pages[rule][]',
 	'options' => $rules,
 	'class' => 'roles-ui-form-rule-select',
 	'value' => $prule,
-	
-		));
+]);
 
 $forward_url = elgg_extract('forward', $details);
 

@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+return [
 
 	'menu:page:header:roles' => 'Roles',
 
@@ -63,6 +63,6 @@ $english = array(
 
 	'roles_ui:delete:success' => 'Role has been successfully deleted',
 	'roles_ui:delete:error' => 'Unable to delete role',
-);
 
-add_translation("en", $english);
+	'roles_ui:no_roles' => 'No roles yet',
+];

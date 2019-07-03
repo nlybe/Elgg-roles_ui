@@ -95,12 +95,13 @@ class Menus {
 
 		$role = roles_get_role($user);
 
-		elgg_load_css('lightbox');
-		elgg_load_js('lightbox');
+		// elgg_load_css('lightbox');
+		// elgg_load_js('lightbox');
 
 		$menu[] = ElggMenuItem::factory([
 			'name' => 'roles:set',
-			'text' => elgg_echo('roles_ui:set:role', [$role->getDisplayName()]),
+			// 'text' => elgg_echo('roles_ui:set:role', [$role->getDisplayName()]),
+			'text' => elgg_echo('roles_ui:set:role', [$role->title]),
 			'href' => 'ajax/view/roles/ajax/set?guid=' . $user->guid,
 			'data-guid' => $user->guid,
 			'section' => 'admin',

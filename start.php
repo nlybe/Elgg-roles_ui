@@ -24,12 +24,6 @@ elgg_register_event_handler('init', 'system', function() {
 
 	elgg_unregister_event_handler('ready', 'system', 'roles_check_update');
 
-	// Register actions
-	elgg_register_action('roles/edit', __DIR__ . '/actions/edit.php', 'admin');
-	elgg_register_action('roles/delete', __DIR__ . '/actions/delete.php', 'admin');
-	elgg_register_action('roles/permissions', __DIR__ . '/actions/permissions.php', 'admin');
-	elgg_register_action('roles/set', __DIR__ . '/actions/set.php', 'admin');
-
 	// Register JS and CSS
 	elgg_register_simplecache_view('js/roles/ui/config.js');
 	elgg_extend_view('css/elgg', 'roles/ui/set.css');

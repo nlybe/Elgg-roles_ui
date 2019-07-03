@@ -3,7 +3,7 @@
 
 	<name>Roles UI</name>
 	<id>roles_ui</id>
-	<version type="dist">2.0.0</version>
+	<version type="dist">3.0.0</version>
 
 	<description>Admin user interface for creating and managing roles</description>
 	<category>roles</category>
@@ -14,15 +14,15 @@
 	<copyright>2011-2015 (c) Ismayil Khayredinov</copyright>
 	<license>GNU Public License version 2</license>
 
-	<requires>
-		<type>elgg_release</type>
-		<version>2.3</version>
-	</requires>
+    <requires>
+        <type>elgg_release</type>
+        <version>3.0</version>
+    </requires>
 
 	<requires>
 		<type>plugin</type>
 		<name>roles</name>
-		<version>2.0</version>
+		<version>3.1.0</version>
 		<priority>after</priority>
 	</requires>
 
