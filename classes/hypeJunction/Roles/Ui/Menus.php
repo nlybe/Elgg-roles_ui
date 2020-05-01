@@ -101,7 +101,7 @@ class Menus {
 		$menu[] = ElggMenuItem::factory([
 			'name' => 'roles:set',
 			// 'text' => elgg_echo('roles_ui:set:role', [$role->getDisplayName()]),
-			'text' => elgg_echo('roles_ui:set:role', [$role->title]),
+			'text' => elgg_echo('roles_ui:set:role', [elgg_echo($role->getDisplayName())]),
 			'href' => 'ajax/view/roles/ajax/set?guid=' . $user->guid,
 			'data-guid' => $user->guid,
 			'section' => 'admin',

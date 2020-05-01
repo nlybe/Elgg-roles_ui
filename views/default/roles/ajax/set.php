@@ -13,7 +13,7 @@ $body .= elgg_view('input/hidden', array(
 	'name' => 'guid',
 	'value' => $entity->guid,
 		));
-$body .= '<div class="elgg-foot">' . elgg_view('input/submit') . '</div>';
+$body .= '<div class="elgg-foot">' . elgg_view('input/submit', ['value' => elgg_echo('save')]) . '</div>';
 
 elgg_push_context('widgets');
 echo '<div class="roles-ui-set-lightbox">';
