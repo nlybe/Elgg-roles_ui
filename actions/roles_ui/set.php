@@ -9,6 +9,11 @@ namespace Elgg\Roles\UI;
 $guid = get_input('guid');
 $role_name = get_input('role');
 
+# Alter to DEFAULT_ROLE if 'No specific role' is selected on change role form
+if ($role_name == NO_ROLE) {
+	$role_name = DEFAULT_ROLE;
+}
+
 $user = get_entity($guid);
 $role = roles_get_role_by_name($role_name);
 
@@ -19,6 +24,7 @@ if (!elgg_is_admin_logged_in()) {
 if (!elgg_instanceof($user, 'user')) {
 	return elgg_error_response(elgg_echo('roles_ui:set:error:no_user'));
 }
+
 
 if (!elgg_instanceof($role, 'object', 'role')) {
 	return elgg_error_response(elgg_echo('roles_ui:set:error:no_role'));

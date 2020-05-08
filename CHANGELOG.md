@@ -1,3 +1,12 @@
+# 3.0.1 (May 2020)
+
+* Alter to DEFAULT_ROLE if 'No specific role' is selected on change role 
+* Set as obsolete unused files (to delete)
+
+# 3.0.0 (Jul 2019)
+
+* elgg: Updates API for Elgg 3.0 compability
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/hypeJunction/Elgg-roles_ui/compare/1.1.0...v2.0.0) (2017-05-31)
 
@@ -37,6 +46,3 @@
 ### Features
 
 * **grunt:** automate releases ([5682166](https://github.com/hypeJunction/Elgg-roles_ui/commit/5682166))
-
-
-
